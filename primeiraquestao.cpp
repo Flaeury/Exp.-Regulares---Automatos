@@ -9,6 +9,7 @@ bool validarNome(const std::string& nomeCompleto) {
     return std::regex_match(nomeCompleto, regexNome);
 }
 
+
 int main() {
     std::string nomeCompleto;
     char opcao;
