@@ -7,16 +7,19 @@ Este repositório contém o trabalho prático para a disciplina de Teoria da Com
 O repositório está organizado da seguinte forma:
 
 - **.ccls-cache/**: Diretório contendo arquivos de cache para a configuração do CCLS (C/C++ Language Server).
+- 
 - **.vscode/**: Configurações para o Visual Studio Code.
   - **c_cpp_properties.json**: Configurações do IntelliSense para C++.
   - **launch.json**: Configurações para depuração no VSCode.
   - **settings.json**: Outras configurações do VSCode.
+  - 
 - **questao1/**: Implementações referentes à Questão 1.
   - **1_nomeEsobrenome_daniel.cpp**: Implementação para validação de nome e sobrenome.
   - **2_emailEnumero_real_rogerio.cpp**: Implementação para validação de e-mail e número real.
   - **3_senha_christian.cpp**: Implementação para validação de senha.
   - **4_cpfEdatahora_raiane.cpp**: Implementação para validação de CPF e data/hora.
   - **5_telefone_gabriel.cpp**: Implementação para validação de telefone.
+  - 
 - **questao2/**: Implementações referentes à Questão 2.
   - **A_daniel.cpp**: Implementação para o padrão A da Questão 2.
   - **B_rogerio.cpp**: Implementação para o padrão B da Questão 2.
@@ -34,31 +37,15 @@ O repositório está organizado da seguinte forma:
 
 ## Como Rodar o Código
 
-Para compilar e testar as implementações, siga os passos abaixo:
+### Para testar o código individualmente:
 
-1. **Certifique-se de ter o compilador C++ instalado** (por exemplo, `g++`).
-
-2. **Compile o código** usando o Makefile incluído no projeto. No diretório raiz do projeto, execute:
-   ```sh
-   make
-Isso compilará todos os arquivos C++ e gerará os executáveis correspondentes.
-
-Execute o programa desejado. Navegue até o diretório correspondente e execute o arquivo binário gerado. Por exemplo:
-
-sh
-Copiar código
-./questao1/1_nomeEsobrenome_daniel
-Para testar o código individualmente, abra o arquivo desejado dentro do diretório questao1/ ou questao2/, edite conforme necessário e compile com:
-
-sh
-Copiar código
-g++ -o main questao1/1_nomeEsobrenome_daniel.cpp
-./main
-Documentação
-O relatório completo do trabalho está disponível no arquivo 1_trabalho_expressao_regular.pdf.
+Abra o arquivo desejado dentro do diretório questao1/ ou questao2/.
+Comente todos os outros arquivos que não são relevantes para o teste atual. Por exemplo, se você deseja testar 1_nomeEsobrenome_daniel.cpp, comente o código em outros arquivos dentro do mesmo diretório.
+Compile o código usando g++:
 
 Configuração do Ambiente de Desenvolvimento
 Visual Studio Code: Use as configurações em .vscode/ para configurar o ambiente de desenvolvimento.
 Replit: O arquivo .replit contém as configurações necessárias para rodar o projeto no ambiente Replit.
-Contribuições
+
+##Contribuições
 Sinta-se à vontade para contribuir com melhorias ou correções para este projeto. Para isso, siga as melhores práticas de contribuição do GitHub, como fork, branches e pull requests.
