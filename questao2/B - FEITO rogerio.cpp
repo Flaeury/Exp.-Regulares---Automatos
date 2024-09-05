@@ -4,8 +4,8 @@
 using namespace std;
 
 bool validarFamilia(string familiaStr) {
-    regex regexEmail("(MH|HM)h*mh*(h*mh*mh*)*");
-    return regex_match(familiaStr, regexEmail);
+    regex regexFamilia("(MH|HM)h*mh*(h*mh*mh*)*");
+    return regex_match(familiaStr, regexFamilia);
 }
 
 int main() {
