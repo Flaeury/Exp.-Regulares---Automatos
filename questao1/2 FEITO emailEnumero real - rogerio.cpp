@@ -4,7 +4,7 @@
 using namespace std;
 
 bool validarEmail(string emailStr) {
-    regex regexEmail("[a-z]+@[a-z]+(\.com)?.br");
+    regex regexEmail("[a-z]+@[a-z]+(\.com)?\.br");
     return regex_match(emailStr, regexEmail);
 }
 
