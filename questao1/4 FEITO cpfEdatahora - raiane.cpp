@@ -12,7 +12,8 @@ bool validarFormatoCpf(const string& cpf) {
 }
 
 bool validarDataHora(const string& dataHora) {
-   regex regexDataHora(R"((0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\d{4}\s([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9])");
+   regex regexDataHora(R"(\d{2}/\d{2}/\d{4}\s\d{2}:\d{2}:\d{2})");
+
    
     return regex_match(dataHora, regexDataHora);
 }
