@@ -1,39 +1,31 @@
 #include <iostream>
 #include <regex>
 #include <string>
-#include <locale.h>
-#include <windows.h>
-
-// Casais homossexuais mais velhos que os filhos, com pelo menos seis filhos, em que os
-// dois primeiros filhos formam um casal e os últimos também.
+#include <vector>
 
 using namespace std;
 
-bool validarFamilia(string familiaStr) {
-    regex regexFamilia("(MM|HH)(hh|mm)(h|m){2,}(hh|mm)$");
+// Função que valida a família baseada no regex
+bool validarFamilia(const string& familiaStr) {
+    regex regexFamilia("(MM|HH)(hm|mh)(h|m){2,}(hm|mh)$");
     return regex_match(familiaStr, regexFamilia);
 }
 
 int main() {
-    string familiaStr;
-    char opcao;
+    // Array de famílias para validação
+    vector<string> familias = {
+        "MMhmhmhm",   // True
+        "HHmhmmhm",   // True
+        "MMhmmmhm",   // False
+        "HHhmhmmm",   // False
+        "MMhmhmhmhm"  // True
+    };
 
-    do {
-        cout << "Insira uma familia: ";
-        cin >> familiaStr;
-
-        if(validarFamilia(familiaStr)) {
-            cout << "A familia foi validada!" << endl;
-        } else {
-            cout << "A familia nao foi validada!" << endl;
-        }
-
-        cout << "Deseja prosseguir na operacao? (s/n): ";
-        cin >> opcao;
-
-        cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
-        
-    } while(opcao == 's' || opcao == 'S');
+    // Iterar sobre cada string no array e validar
+    for (const string& familia : familias) {
+        bool resultado = validarFamilia(familia);
+        cout << familia << " - " << (resultado ? "True\n" : "False\n") << endl;
+    }
 
     return 0;
 }
