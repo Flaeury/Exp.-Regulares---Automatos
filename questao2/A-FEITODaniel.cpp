@@ -13,7 +13,7 @@ int main() {
         std::cin >> entrada;
 
         if (std::regex_match(entrada, padrao)) {
-            std::cout << "A cadeia corresponde ao padrao de uma familia valida." << std::endl;
+            std::cout << "A cadeia CORRESPONDE ao padrao de uma familia valida." << std::endl;
         } else {
             std::cout << "A cadeia NAO corresponde ao padrao de uma familia valida." << std::endl;
         }
