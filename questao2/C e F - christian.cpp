@@ -1,0 +1,56 @@
+#include <iostream>
+#include <regex>
+#include <string>
+
+using namespace std;
+
+bool validarFamiliaHetero(const string& familia) {
+    // Expressão regular para casais heterossexuais mais velhos que os filhos,
+    // com a filha mais velha mulher (M) e o filho mais novo homem (h).
+    regex regex_hetero("^MH(mh)*h$");
+    return regex_match(familia, regex_hetero);
+}
+
+int main() {
+    string familia;
+    cout << "Digite a cadeia que representa a família: ";
+    cin >> familia;
+
+    if (validarFamiliaHetero(familia)) {
+        cout << "Cadeia válida para a família heterossexual." << endl;
+    } else {
+        cout << "Cadeia inválida para a família heterossexual." << endl;
+    }
+
+    return 0;
+}
+
+
+//questao F agora
+
+#include <iostream>
+#include <regex>
+#include <string>
+
+using namespace std;
+
+bool validarFamiliaHomo(const string& familia) {
+    // Expressão regular para casais homossexuais mais velhos que os filhos,
+    // sem dois filhos homens consecutivos (sem "hh").
+    regex regex_homo("^(MM|HH)((mh|hm|mm|h|m)*)$");
+    return regex_match(familia, regex_homo);
+}
+
+int main() {
+    string familia;
+    cout << "Digite a cadeia que representa a família: ";
+    cin >> familia;
+
+    if (validarFamiliaHomo(familia)) {
+        cout << "Cadeia válida para a família homossexual." << endl;
+    } else {
+        cout << "Cadeia inválida para a família homossexual." << endl;
+    }
+
+    return 0;
+}
