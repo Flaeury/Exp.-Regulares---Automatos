@@ -20,7 +20,7 @@ void testarCpfs(const vector<string>& cpfs) {
 
     // For para pular de array para array e testá-los
     for (const string& cpf : cpfs) {
-        // Chamamos aqui a função do regex, que irá retornar o boleano de cada um dos arrays do vetor CPF
+        // Chamamos aqui a função do regex, que irá retornar o boleano de cada um dos arrays do vetor cpfs
         bool resultado = validarFormatoCpf(cpf);
         // Saída será printada ou True ou False
         cout << cpf << " - " << (resultado ? "True\n" : "False\n") << endl;
@@ -34,16 +34,12 @@ int main() {
 
     // Array de CPFs para estressar a cadeia e fazer os testes
     vector<string> cpfs = {
-        "123.456.789-00",   // True
         "999.999.999-99",   // True
         "9.229.229.229-00",  // False
         "123.123.123-1a", // False 
         "111.111.111-11",   // True
-        "123.456.789-0",    // False
         "000.111.222-33", // True
-        "248.163.264-22", // True
         "abc.def.ghi-jk", // False
-        "987.654.321-99"   // True
     };
 
     // Saída com prints do resultado

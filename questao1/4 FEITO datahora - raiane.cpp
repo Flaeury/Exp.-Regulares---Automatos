@@ -15,32 +15,28 @@ bool validarDataHora(const string& dataHora) {
 
 // Função para testar um array de Datas/Horas
 void testarDatasHoras(const vector<string>& datasHoras) {
+    // For para pular de array para array e testá-los
     for (const string& dataHora : datasHoras) {
+        // Chamamos aqui a função do regex, que irá retornar o boleano de cada um dos arrays do vetor datasHoras
         bool resultado = validarDataHora(dataHora);
         cout << dataHora << " - " << (resultado ? "True\n" : "False\n") << endl;
     }
 }
 
 int main() {
+    // Serve para mostrar caracteres como ~ e ç.
     setlocale(LC_ALL, "pt_BR.UTF-8");
     SetConsoleOutputCP(CP_UTF8);
 
     // Array de Datas e Horas para validar
     vector<string> datasHoras = {
-        "12/09/2024 14:30:45", // True
-        "31/02/2023 08:15:00", // True
         "01/01/2020 00:00:00", // True
-        "12/09/24 14:30:45",    // False (formato incorreto)
         "99/99/9999 99:99:99", // True
-        "00/00/000099:99:99" // False (sem espaçamento)
-        "12/34/5678 90:12:34", // True
+        "00/00/000099:99:99", // False (sem espaçamento)
         "77/77/7777 00:00:00", // True
         "a5/b5/cccc d5:e5:f5", // False
         "-10/00/0000 64:83:92", // False
     };
-
-    int escolha;
-
    
     cout << "Validando Datas e Horas:\n" << endl;
     testarDatasHoras(datasHoras);

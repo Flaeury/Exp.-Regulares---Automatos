@@ -7,7 +7,7 @@ using namespace std;
 
 // Função que valida a família baseada no regex
 bool validarFamilia(const string& familiaStr) {
-    regex regexFamilia("(MM|HH)(hm|mh)(h|m){2,}(hm|mh)$");
+    regex regexFamilia("^(MM|HH)(hm|mh)(h|m){2,}(hm|mh)$");
     return regex_match(familiaStr, regexFamilia);
 }
 
@@ -18,7 +18,8 @@ int main() {
         "HHmhmmhm",   // True
         "MMhmmmhm",   // False
         "HHhmhmmm",   // False
-        "MMhmhmhmhm"  // True
+        "MMhmhmhmhm",  // True
+        "MMmhhhmmmh"  // True
     };
 
     // Iterar sobre cada string no array e validar
