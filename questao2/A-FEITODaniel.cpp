@@ -5,7 +5,7 @@
 
 int main() {
 //regex
-    std::regex padrao("(MH|HM)((h|m)*m(h|m)*m(h|m)*| |(h|m)*h(h|m)*h(h|m)*m(h|m)*)");
+    std::regex padrao("(MH|HM)((h|m)*m(h|m)*m(h|m)*|(h|m)*h(h|m)*|(h|m)*h(h|m)*h(h|m)*m(h|m)*)");
 
     // Vetor de strings para testar
     std::vector<std::string> entradas = {
