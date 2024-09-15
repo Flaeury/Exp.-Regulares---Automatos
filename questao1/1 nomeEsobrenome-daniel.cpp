@@ -1,7 +1,9 @@
 #include <iostream>
 #include <regex>
 #include <string>
+#include <vector>
 
+//funçao para validar nomes
 bool validarNome(const std::string& nomeCompleto) {
     std::regex regexNome(
         R"(^[A-Z][a-z]+(\s[A-Z][a-z]+)?\s[A-Z][a-z]+$)"
@@ -10,24 +12,25 @@ bool validarNome(const std::string& nomeCompleto) {
 }
 
 int main() {
-    std::string nomeCompleto;
-    char opcao;
-
-    do {
-        std::cout << "Digite um nome para validar: ";
-        std::getline(std::cin, nomeCompleto);
-
-        if (validarNome(nomeCompleto)) {
-            std::cout << nomeCompleto << " e valido!" << std::endl;
+    //vetor de string para teste do regex
+    std::vector<std::string> nomes = {
+        "Ada Lovelace",
+        "Alan Turing",
+        "Stephen Cole Kleene",
+        "1Alan",
+        "Alan",
+        "A1an",
+        "A1an Turing",
+        "Alan turing"
+    };
+//laço for que itera no vetor de strings e aplica funcao de verificação
+    for (const auto& nome : nomes) {
+        if (validarNome(nome)) {
+            std::cout << nome << " - valido!" << std::endl;
         } else {
-            std::cout << nomeCompleto << " e invalido!" << std::endl;
+            std::cout << nome << " - invalido!" << std::endl;
         }
-
-        std::cout << "Deseja testar outro nome? (s/n): ";
-        std::cin >> opcao;
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
-
-    } while (opcao == 's' || opcao == 'S');
+    }
 
     return 0;
 }
