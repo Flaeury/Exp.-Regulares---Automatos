@@ -1,6 +1,7 @@
 #include <iostream>
 #include <regex>
 #include <string>
+#include <vector> // Inclua a biblioteca para usar vetores
 
 using namespace std;
 
@@ -37,20 +38,29 @@ bool validarSenha(const string& senha) {
 }
 
 int main() {
-    string senha;
-    // do {
-    while(true){
-    cout << "Digite a senha: ";
-    cin >> senha;
+    // Lista predefinida de senhas para testar
+    vector<string> senhas = {
+        "Password1",   // Válida
+        "password",    // Inválida (sem letra maiúscula e sem número)
+        "12345678",    // Inválida (sem letra)
+        "ABCDEFGH",    // Inválida (sem número)
+        "Pass1234",    // Válida
+        "Short1",      // Inválida (menos de 8 caracteres)
+        "ValidPass9",  // Válida
+        "invalidpass", // Inválida (sem número e sem letra maiúscula)
+        "INV4LID",     // Inválida (menos de 8 caracteres)
+        "Go9odPass"    // Válida
+    };
 
-    if (validarSenha(senha)) {
-        cout << "Senha válida!" << endl;
-        break;
-    } else {
-        cout << "Senha inválida!" << endl;
+    // Itera sobre a lista de senhas e testa cada uma
+    for (const string& senha : senhas) {
+        cout << "Testando senha: " << senha << " -> ";
+        if (validarSenha(senha)) {
+            cout << "Senha válida!" << endl;
+        } else {
+            cout << "Senha inválida!" << endl;
         }
     }
-    // } while (senha != "abortar" || validarSenha(senha) != true);
-    // cout << "Programa finalizado." << endl;
+
     return 0;
 }
